@@ -21,6 +21,7 @@
 		1ED172D4193587F50014DB5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED172B6193587F50014DB5B /* UIKit.framework */; };
 		1ED172DC193587F50014DB5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ED172DA193587F50014DB5B /* InfoPlist.strings */; };
 		1ED172DE193587F50014DB5B /* MandelbrotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172DD193587F50014DB5B /* MandelbrotTests.m */; };
+		1ED172E819358B800014DB5B /* iPadBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED172E719358B800014DB5B /* iPadBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1ED172D9193587F50014DB5B /* MandelbrotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MandelbrotTests-Info.plist"; sourceTree = "<group>"; };
 		1ED172DB193587F50014DB5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1ED172DD193587F50014DB5B /* MandelbrotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MandelbrotTests.m; sourceTree = "<group>"; };
+		1ED172E719358B800014DB5B /* iPadBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPadBackground.png; path = ../../../Desktop/iPadBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1ED172C1193587F50014DB5B /* AppDelegate.h */,
 				1ED172C2193587F50014DB5B /* AppDelegate.m */,
 				1ED172C4193587F50014DB5B /* Main.storyboard */,
+				1ED172E719358B800014DB5B /* iPadBackground.png */,
 				1ED172C7193587F50014DB5B /* ViewController.h */,
 				1ED172C8193587F50014DB5B /* ViewController.m */,
 				1ED172CA193587F50014DB5B /* Images.xcassets */,
@@ -231,6 +234,7 @@
 				1ED172CB193587F50014DB5B /* Images.xcassets in Resources */,
 				1ED172BD193587F50014DB5B /* InfoPlist.strings in Resources */,
 				1ED172C6193587F50014DB5B /* Main.storyboard in Resources */,
+				1ED172E819358B800014DB5B /* iPadBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

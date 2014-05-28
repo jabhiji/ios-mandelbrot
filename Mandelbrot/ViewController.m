@@ -9,17 +9,20 @@
 #import "ViewController.h"
 #import "CrossHair.h"
 #import "Model.h"
+#import "DrawMandelbrot.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIView *blackBox;
 @property (strong, nonatomic) CrossHair* cross;
 @property (strong, nonatomic) Model* model;
+@property (strong, nonatomic) DrawMandelbrot* drawSet;
 @end
 
 @implementation ViewController
 @synthesize blackBox;
 @synthesize cross;
 @synthesize model;
+@synthesize drawSet;
 
 - (void)viewDidLoad
 {
@@ -28,12 +31,25 @@
     
     // initialize the model
     model = [[Model alloc] init];
+    [model updateMandelbrotData];
     
-    // draw the cross hairs
+    // black box view dimensions
     float width = blackBox.frame.size.width;
     float height = blackBox.frame.size.height;
+
+    // draw the view
+    CGRect viewRect = CGRectMake(0, 0, width , height);
+    drawSet = [[DrawMandelbrot alloc] initWithFrame:viewRect];
+    drawSet.nx = model.nx;
+    drawSet.ny = model.ny;
+    drawSet.MAX_ITER = model.MAX_ITER;
+    drawSet.data = model.iters;
+    [blackBox addSubview:drawSet];
+    
+    // draw the cross hairs
     CGRect myRect = CGRectMake(0, 0, width, height);
     cross = [[CrossHair alloc] initWithFrame:myRect];
+    [cross setBackgroundColor:[UIColor clearColor]];
     [blackBox addSubview:cross];
 }
 

@@ -13,6 +13,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIView *blackBox;
+@property float width, height;
 @property (strong, nonatomic) CrossHair* cross;
 @property (strong, nonatomic) Model* model;
 @property (strong, nonatomic) DrawMandelbrot* drawSet;
@@ -21,6 +22,7 @@
 
 @implementation ViewController
 @synthesize blackBox;
+@synthesize width, height;
 @synthesize cross;
 @synthesize model;
 @synthesize drawSet;
@@ -29,6 +31,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // black box view dimensions
+    width = blackBox.frame.size.width;
+    height = blackBox.frame.size.height;
     
     // initialize the model
     model = [[Model alloc] init];
@@ -61,9 +67,6 @@
         touchLocation = [t locationInView:blackBox];
         float x = touchLocation.x;
         float y = touchLocation.y;
-        
-        float width = blackBox.frame.size.width;
-        float height = blackBox.frame.size.height;
         
         float dx = width / 2;
         float dy = height / 2;
@@ -104,10 +107,6 @@
 - (void) drawMandelbrotSet
 {
     [model updateMandelbrotData];
-    
-    // black box view dimensions
-    float width = blackBox.frame.size.width;
-    float height = blackBox.frame.size.height;
     
     // draw the view
     CGRect viewRect = CGRectMake(0, 0, width , height);

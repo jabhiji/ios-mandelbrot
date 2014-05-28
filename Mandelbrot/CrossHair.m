@@ -44,7 +44,7 @@
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, 0.0, height/2.0);
     CGContextAddLineToPoint(context, width, height/2.0);
-    [[UIColor yellowColor] setStroke];
+    [[UIColor whiteColor] setStroke];
     CGContextDrawPath(context, kCGPathStroke);
 }
 

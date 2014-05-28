@@ -114,6 +114,29 @@
                 break;
         }
     }
+    
+    [model updateMandelbrotData];
+    
+    // black box view dimensions
+    float width = blackBox.frame.size.width;
+    float height = blackBox.frame.size.height;
+    
+    // draw the view
+    CGRect viewRect = CGRectMake(0, 0, width , height);
+    drawSet = [[DrawMandelbrot alloc] initWithFrame:viewRect];
+    drawSet.nx = model.nx;
+    drawSet.ny = model.ny;
+    drawSet.MAX_ITER = model.MAX_ITER;
+    drawSet.data = model.iters;
+    [blackBox addSubview:drawSet];
+    
+    // draw the cross hairs
+    CGRect myRect = CGRectMake(0, 0, width, height);
+    cross = [[CrossHair alloc] initWithFrame:myRect];
+    [cross setBackgroundColor:[UIColor clearColor]];
+    [blackBox addSubview:cross];
+
+    
 }
 
 @end

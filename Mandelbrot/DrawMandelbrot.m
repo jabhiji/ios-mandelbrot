@@ -46,7 +46,7 @@
         for(int j = 0; j < ny; j++) {
             
             double x = i*dx;   // screen x coordinate
-            double y = j*dy;   // screen y coordinate
+            double y = (ny-j-1)*dy;   // screen y coordinate
             
             int N = i + nx*j;
             int VAL = [[data objectAtIndex:N] intValue];

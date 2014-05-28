@@ -95,8 +95,6 @@
         int yIndex = y/dy;
         int N = (xIndex + 2*yIndex) + 1;
         
-        NSLog(@"Zooming in to region %d", N);
-        
         switch (N) {
             case 1:
                 model.xmax = model.xmin + (model.xmax - model.xmin)/2;
@@ -106,18 +104,23 @@
             case 2:
                 model.xmin = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymin = model.ymin + (model.ymax - model.ymin)/2;
+                break;
             
             case 3:
                 model.xmax = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymax = model.ymin + (model.ymax - model.ymin)/2;
+                break;
                 
             case 4:
                 model.xmin = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymax = model.ymin + (model.ymax - model.ymin)/2;
+                break;
                 
             default:
                 break;
         }
+        
+        NSLog(@"Zooming in to region %d: xmin %.4f xmax %.4f ymin %.4f ymax %.4f", N, model.xmin, model.xmax, model.ymin, model.ymax);
         
         [self drawMandelbrotSet];
     }

@@ -56,9 +56,6 @@
     for(int i = 0; i < nx; i++) {
         for(int j = 0; j < ny; j++) {
             
-            double x = i*dx;   // screen x coordinate
-            double y = (ny-j-1)*dy;   // screen y coordinate
-            
             int N = i + nx*j;
             int VAL = [[data objectAtIndex:N] intValue];
                         
@@ -89,6 +86,8 @@
             }
 
             // draw colored rectangle
+            double x = i*dx;          // screen x coordinate
+            double y = (ny-j-1)*dy;   // screen y coordinate
             CGRect rect = CGRectMake(x, y, dx, dy);
             [fillColor setFill];
             CGContextFillRect(context, rect);

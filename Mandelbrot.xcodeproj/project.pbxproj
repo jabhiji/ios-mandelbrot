@@ -23,6 +23,7 @@
 		1ED172DE193587F50014DB5B /* MandelbrotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172DD193587F50014DB5B /* MandelbrotTests.m */; };
 		1ED172E819358B800014DB5B /* iPadBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED172E719358B800014DB5B /* iPadBackground.png */; };
 		1ED172EE19359B190014DB5B /* CrossHair.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172ED19359B190014DB5B /* CrossHair.m */; };
+		1ED172F11935A8CD0014DB5B /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172F01935A8CD0014DB5B /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		1ED172E719358B800014DB5B /* iPadBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPadBackground.png; path = ../../../Desktop/iPadBackground.png; sourceTree = "<group>"; };
 		1ED172EC19359B190014DB5B /* CrossHair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossHair.h; sourceTree = "<group>"; };
 		1ED172ED19359B190014DB5B /* CrossHair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossHair.m; sourceTree = "<group>"; };
+		1ED172EF1935A8CD0014DB5B /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		1ED172F01935A8CD0014DB5B /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				1ED172C1193587F50014DB5B /* AppDelegate.h */,
 				1ED172C2193587F50014DB5B /* AppDelegate.m */,
 				1ED172C4193587F50014DB5B /* Main.storyboard */,
+				1ED172EF1935A8CD0014DB5B /* Model.h */,
+				1ED172F01935A8CD0014DB5B /* Model.m */,
 				1ED172EC19359B190014DB5B /* CrossHair.h */,
 				1ED172ED19359B190014DB5B /* CrossHair.m */,
 				1ED172E719358B800014DB5B /* iPadBackground.png */,
@@ -262,6 +267,7 @@
 				1ED172C9193587F50014DB5B /* ViewController.m in Sources */,
 				1ED172C3193587F50014DB5B /* AppDelegate.m in Sources */,
 				1ED172BF193587F50014DB5B /* main.m in Sources */,
+				1ED172F11935A8CD0014DB5B /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

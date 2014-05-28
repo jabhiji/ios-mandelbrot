@@ -10,11 +10,12 @@
 #import "CrossHair.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UIView *blackBox;
 @property (strong, nonatomic) CrossHair* cross;
 @end
 
 @implementation ViewController
-
+@synthesize blackBox;
 @synthesize cross;
 
 - (void)viewDidLoad
@@ -22,12 +23,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // initialize Ball object
-    CGRect myRect = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.height);
+    // draw the cross hairs
+    float width = blackBox.frame.size.width;
+    float height = blackBox.frame.size.height;
+    CGRect myRect = CGRectMake(0, 0, width, height);
     cross = [[CrossHair alloc] initWithFrame:myRect];
-    [cross setBackgroundColor:[UIColor clearColor]];
-    
-    [self.view addSubview:cross];
+    [blackBox addSubview:cross];
 }
 
 - (void)didReceiveMemoryWarning

@@ -23,6 +23,17 @@
     return self;
 }
 
+- (void) initData
+{
+    data = [[NSMutableArray alloc] initWithCapacity:nx*ny];
+    
+    for(int i = 0; i < nx; i++) {
+        for(int j = 0; j < ny; j++) {
+            [data addObject:@(0)];
+        }
+    }
+}
+
 - (void)drawRect:(CGRect)rect
 {
     // get the current context

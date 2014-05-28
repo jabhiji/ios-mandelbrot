@@ -38,7 +38,26 @@
     
     // initialize the model
     model = [[Model alloc] init];
+
+    // get window size
+    CGRect viewRect = CGRectMake(0, 0, width , height);
+
+    // initialize the Mandelbrot view
+    drawSet = [[DrawMandelbrot alloc] initWithFrame:viewRect];
+    drawSet.nx = model.nx;
+    drawSet.ny = model.ny;
+    drawSet.MAX_ITER = model.MAX_ITER;
+    [drawSet initData];
     
+    // initialize cross view
+    cross = [[CrossHair alloc] initWithFrame:viewRect];
+    [cross setBackgroundColor:[UIColor clearColor]];
+    
+    // add subviews
+    [blackBox addSubview:drawSet];
+    [blackBox addSubview:cross];
+    
+    // draw the Mandelbrot set
     [self drawMandelbrotSet];
 }
 
@@ -99,29 +118,16 @@
             default:
                 break;
         }
+        
+        [self drawMandelbrotSet];
     }
-    
-    [self drawMandelbrotSet];
 }
 
 - (void) drawMandelbrotSet
 {
     [model updateMandelbrotData];
-    
-    // draw the view
-    CGRect viewRect = CGRectMake(0, 0, width , height);
-    drawSet = [[DrawMandelbrot alloc] initWithFrame:viewRect];
-    drawSet.nx = model.nx;
-    drawSet.ny = model.ny;
-    drawSet.MAX_ITER = model.MAX_ITER;
     drawSet.data = model.iters;
-    [blackBox addSubview:drawSet];
-    
-    // draw the cross hairs
-    CGRect myRect = CGRectMake(0, 0, width, height);
-    cross = [[CrossHair alloc] initWithFrame:myRect];
-    [cross setBackgroundColor:[UIColor clearColor]];
-    [blackBox addSubview:cross];
+    [drawSet setNeedsDisplay];
 }
 
 - (IBAction)backToSquareOne:(id)sender {

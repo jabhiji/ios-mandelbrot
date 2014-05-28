@@ -12,4 +12,5 @@
 @property int nx, ny;
 @property int MAX_ITER;
 @property NSMutableArray* data;
+- (void) initData;
 @end

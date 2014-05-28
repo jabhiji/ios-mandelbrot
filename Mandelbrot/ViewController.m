@@ -16,6 +16,7 @@
 @property (strong, nonatomic) CrossHair* cross;
 @property (strong, nonatomic) Model* model;
 @property (strong, nonatomic) DrawMandelbrot* drawSet;
+- (IBAction)backToSquareOne:(id)sender;
 @end
 
 @implementation ViewController
@@ -31,26 +32,8 @@
     
     // initialize the model
     model = [[Model alloc] init];
-    [model updateMandelbrotData];
     
-    // black box view dimensions
-    float width = blackBox.frame.size.width;
-    float height = blackBox.frame.size.height;
-
-    // draw the view
-    CGRect viewRect = CGRectMake(0, 0, width , height);
-    drawSet = [[DrawMandelbrot alloc] initWithFrame:viewRect];
-    drawSet.nx = model.nx;
-    drawSet.ny = model.ny;
-    drawSet.MAX_ITER = model.MAX_ITER;
-    drawSet.data = model.iters;
-    [blackBox addSubview:drawSet];
-    
-    // draw the cross hairs
-    CGRect myRect = CGRectMake(0, 0, width, height);
-    cross = [[CrossHair alloc] initWithFrame:myRect];
-    [cross setBackgroundColor:[UIColor clearColor]];
-    [blackBox addSubview:cross];
+    [self drawMandelbrotSet];
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,6 +98,11 @@
         }
     }
     
+    [self drawMandelbrotSet];
+}
+
+- (void) drawMandelbrotSet
+{
     [model updateMandelbrotData];
     
     // black box view dimensions
@@ -135,8 +123,15 @@
     cross = [[CrossHair alloc] initWithFrame:myRect];
     [cross setBackgroundColor:[UIColor clearColor]];
     [blackBox addSubview:cross];
+}
 
-    
+- (IBAction)backToSquareOne:(id)sender {
+    model.xmin = -2.0;
+    model.xmax = 1.0;
+    model.ymin = -1.5;
+    model.ymax = 1.5;
+
+    [self drawMandelbrotSet];
 }
 
 @end

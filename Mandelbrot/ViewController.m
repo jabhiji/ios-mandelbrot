@@ -95,6 +95,8 @@
         int yIndex = y/dy;
         int N = (xIndex + 2*yIndex) + 1;
         
+        NSLog(@"You selected block %d", N);
+        
         switch (N) {
             case 1:
                 model.xmax = model.xmin + (model.xmax - model.xmin)/2;
@@ -119,8 +121,6 @@
             default:
                 break;
         }
-        
-        NSLog(@"Zooming in to region %d: xmin %.4f xmax %.4f ymin %.4f ymax %.4f", N, model.xmin, model.xmax, model.ymin, model.ymax);
         
         [self drawMandelbrotSet];
     }

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Model : NSObject
-
 @property double xmin, xmax, ymin, ymax;
 @property int nx, ny;
 @property int MAX_ITER;

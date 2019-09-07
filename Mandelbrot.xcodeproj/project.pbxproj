@@ -20,8 +20,6 @@
 		1ED172D2193587F50014DB5B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED172D1193587F50014DB5B /* XCTest.framework */; };
 		1ED172D3193587F50014DB5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED172B2193587F50014DB5B /* Foundation.framework */; };
 		1ED172D4193587F50014DB5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED172B6193587F50014DB5B /* UIKit.framework */; };
-		1ED172DC193587F50014DB5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ED172DA193587F50014DB5B /* InfoPlist.strings */; };
-		1ED172DE193587F50014DB5B /* MandelbrotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172DD193587F50014DB5B /* MandelbrotTests.m */; };
 		1ED172EE19359B190014DB5B /* CrossHair.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172ED19359B190014DB5B /* CrossHair.m */; };
 		1ED172F11935A8CD0014DB5B /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172F01935A8CD0014DB5B /* Model.m */; };
 		1ED172F41935C3B70014DB5B /* DrawMandelbrot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED172F31935C3B70014DB5B /* DrawMandelbrot.m */; };
@@ -55,9 +53,6 @@
 		1ED172CA193587F50014DB5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1ED172D0193587F50014DB5B /* MandelbrotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MandelbrotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED172D1193587F50014DB5B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1ED172D9193587F50014DB5B /* MandelbrotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MandelbrotTests-Info.plist"; sourceTree = "<group>"; };
-		1ED172DB193587F50014DB5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1ED172DD193587F50014DB5B /* MandelbrotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MandelbrotTests.m; sourceTree = "<group>"; };
 		1ED172EC19359B190014DB5B /* CrossHair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossHair.h; sourceTree = "<group>"; };
 		1ED172ED19359B190014DB5B /* CrossHair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossHair.m; sourceTree = "<group>"; };
 		1ED172EF1935A8CD0014DB5B /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -94,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				1ED172B8193587F50014DB5B /* Mandelbrot */,
-				1ED172D7193587F50014DB5B /* MandelbrotTests */,
 				1ED172B1193587F50014DB5B /* Frameworks */,
 				1ED172B0193587F50014DB5B /* Products */,
 			);
@@ -148,24 +142,6 @@
 				1ED172BB193587F50014DB5B /* InfoPlist.strings */,
 				1ED172BE193587F50014DB5B /* main.m */,
 				1ED172C0193587F50014DB5B /* Mandelbrot-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1ED172D7193587F50014DB5B /* MandelbrotTests */ = {
-			isa = PBXGroup;
-			children = (
-				1ED172DD193587F50014DB5B /* MandelbrotTests.m */,
-				1ED172D8193587F50014DB5B /* Supporting Files */,
-			);
-			path = MandelbrotTests;
-			sourceTree = "<group>";
-		};
-		1ED172D8193587F50014DB5B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1ED172D9193587F50014DB5B /* MandelbrotTests-Info.plist */,
-				1ED172DA193587F50014DB5B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -261,7 +237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ED172DC193587F50014DB5B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ED172DE193587F50014DB5B /* MandelbrotTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +288,6 @@
 				1ED172C5193587F50014DB5B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1ED172DA193587F50014DB5B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1ED172DB193587F50014DB5B /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

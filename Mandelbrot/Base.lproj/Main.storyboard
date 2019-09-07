@@ -49,10 +49,15 @@
                                     <action selector="backToSquareOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esg-jq-Z90"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GPO-Ia-3DZ">
+                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GPO-Ia-3DZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1ti-le-Zua"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-20" id="GD1-Nb-3Kk"/>
+                            <constraint firstItem="GPO-Ia-3DZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KQU-iW-aRk"/>
                             <constraint firstItem="BrA-lw-oy2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRy-rV-lcX"/>
                             <constraint firstItem="5jV-k4-E7c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUC-VC-2wU"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8L-bk-lcX"/>
@@ -63,6 +68,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="GPO-Ia-3DZ" id="m6h-rP-Cu7"/>
                         <outlet property="blackBox" destination="B4f-jf-Zpk" id="8Sf-R0-Ao7"/>
                     </connections>
                 </viewController>

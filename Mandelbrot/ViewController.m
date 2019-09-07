@@ -17,6 +17,8 @@
 @property (strong, nonatomic) CrossHair* cross;
 @property (strong, nonatomic) Model* model;
 @property (strong, nonatomic) DrawMandelbrot* drawSet;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)backToSquareOne:(id)sender;
 @end
 
@@ -29,7 +31,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    // Do any additional setup after loading the view, typically from a nib.
+    [_activityIndicator setHidesWhenStopped:YES];
 
     // black box view dimensions
     width = blackBox.frame.size.width;
@@ -127,9 +129,18 @@
 
 - (void) drawMandelbrotSet
 {
-    [model updateMandelbrotData];
-    drawSet.data = model.iters;
-    [drawSet setNeedsDisplay];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [_activityIndicator startAnimating];
+    dispatch_queue_t queue = dispatch_queue_create("com.mishasoftwaresolutions.mandelbrot", NULL);
+    dispatch_async(queue, ^{
+        [model updateMandelbrotData];
+        drawSet.data = model.iters;
+        dispatch_async(dispatch_get_main_queue(),^{
+            [_activityIndicator stopAnimating];
+            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+            [drawSet setNeedsDisplay];
+        });
+    });
 }
 
 - (IBAction)backToSquareOne:(id)sender {

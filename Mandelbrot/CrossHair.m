@@ -23,16 +23,9 @@
 {
     // get the current context
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // context size in pixels
-    size_t WIDTH = CGBitmapContextGetWidth(context);
-    size_t HEIGHT = CGBitmapContextGetHeight(context);
-    
-    // for retina display, 1 point = 2 pixels
-    // context size in screen points
-    float width = WIDTH/2.0;
-    float height = HEIGHT/2.0;
-    
+    float width = self.bounds.size.width;
+    float height = self.bounds.size.height;
+
     // vertical centerline
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, width/2.0, 0.0);

@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,52 +21,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPadBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="wAd-bk-ySX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MandelBrotBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wAd-bk-ySX">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-jf-Zpk">
-                                <rect key="frame" x="20" y="159" width="728" height="728"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-jf-Zpk" customClass="DrawMandelbrot">
+                                <rect key="frame" x="20" y="148" width="728" height="728"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B4f-jf-Zpk" secondAttribute="height" multiplier="1:1" id="z8M-sx-IXe"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mandelbrot Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jV-k4-E7c">
-                                <rect key="frame" x="20" y="64" width="728" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mandelbrot Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jV-k4-E7c">
+                                <rect key="frame" x="221.5" y="73" width="325" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-lw-oy2">
-                                <rect key="frame" x="307" y="923" width="154" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-lw-oy2">
+                                <rect key="frame" x="335.5" y="901" width="97" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="RESET">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backToSquareOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esg-jq-Z90"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-20" id="GD1-Nb-3Kk"/>
+                            <constraint firstItem="BrA-lw-oy2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRy-rV-lcX"/>
+                            <constraint firstItem="5jV-k4-E7c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUC-VC-2wU"/>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8L-bk-lcX"/>
+                            <constraint firstItem="BrA-lw-oy2" firstAttribute="top" secondItem="B4f-jf-Zpk" secondAttribute="bottom" constant="25" id="edv-qh-aab"/>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="top" secondItem="5jV-k4-E7c" secondAttribute="bottom" constant="15" id="hmV-XC-nla"/>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sak-ld-OqS"/>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ya4-5U-bIR"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="blackBox" destination="B4f-jf-Zpk" id="hV7-8F-n7m"/>
+                        <outlet property="blackBox" destination="B4f-jf-Zpk" id="8Sf-R0-Ao7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="-300"/>
+            <point key="canvasLocation" x="-17.96875" y="-175.78125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="iPadBackground.png" width="384" height="512"/>
+        <image name="MandelBrotBackground" width="381" height="319"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

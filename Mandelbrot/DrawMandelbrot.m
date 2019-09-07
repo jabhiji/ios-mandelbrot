@@ -14,15 +14,6 @@
 @synthesize MAX_ITER;
 @synthesize data;
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (void) initData
 {
     data = [[NSMutableArray alloc] initWithCapacity:nx*ny];
@@ -39,17 +30,8 @@
     // get the current context
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    // context size in pixels
-    size_t WIDTH = CGBitmapContextGetWidth(context);
-    size_t HEIGHT = CGBitmapContextGetHeight(context);
-    
-    // for retina display, 1 point = 2 pixels
-    // context size in screen points
-    float width = WIDTH/2.0;
-    float height = HEIGHT/2.0;
-    
-    float dx = width/nx;
-    float dy = height/ny;
+    float dx = self.bounds.size.width / nx;
+    float dy = self.bounds.size.height / ny;
     
     // assign color based on the number of iterations - Red Green Blue (RGB)`
     

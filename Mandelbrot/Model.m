@@ -19,8 +19,8 @@
 {
     self = [super init];
     if (self) {
-        nx = 400;
-        ny = 400;
+        nx = 500;
+        ny = 500;
         xmin = -2.0;
         xmax = 1.0;
         ymin = -1.5;

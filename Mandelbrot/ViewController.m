@@ -12,7 +12,7 @@
 #import "DrawMandelbrot.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) IBOutlet UIView *blackBox;
+@property (weak, nonatomic) IBOutlet DrawMandelbrot *blackBox;
 @property float width, height;
 @property (strong, nonatomic) CrossHair* cross;
 @property (strong, nonatomic) Model* model;
@@ -27,15 +27,14 @@
 @synthesize model;
 @synthesize drawSet;
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+    // Do any additional setup after loading the view, typically from a nib.
+
     // black box view dimensions
     width = blackBox.frame.size.width;
     height = blackBox.frame.size.height;
-    
+
     // initialize the model
     model = [[Model alloc] init];
 
@@ -48,15 +47,15 @@
     drawSet.ny = model.ny;
     drawSet.MAX_ITER = model.MAX_ITER;
     [drawSet initData];
-    
+
     // initialize cross view
     cross = [[CrossHair alloc] initWithFrame:viewRect];
     [cross setBackgroundColor:[UIColor clearColor]];
-    
+
     // add subviews
     [blackBox addSubview:drawSet];
     [blackBox addSubview:cross];
-    
+
     // draw the Mandelbrot set
     [self drawMandelbrotSet];
 }

@@ -18,6 +18,11 @@
 @property (strong, nonatomic) Model* model;
 @property (strong, nonatomic) DrawMandelbrot* drawSet;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property NSMutableArray* x_min;
+@property NSMutableArray* x_max;
+@property NSMutableArray* y_min;
+@property NSMutableArray* y_max;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 - (IBAction)backToSquareOne:(id)sender;
 @end
@@ -28,6 +33,8 @@
 @synthesize cross;
 @synthesize model;
 @synthesize drawSet;
+@synthesize x_min, x_max, y_min, y_max;
+@synthesize backButton;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -60,6 +67,21 @@
 
     // draw the Mandelbrot set
     [self drawMandelbrotSet];
+
+    x_min = [[NSMutableArray alloc] init];
+    x_max = [[NSMutableArray alloc] init];
+    y_min = [[NSMutableArray alloc] init];
+    y_max = [[NSMutableArray alloc] init];
+    [self storeCorners];
+    [backButton setHidden:YES];
+}
+
+-(void)storeCorners
+{
+    [x_min addObject:[NSNumber numberWithDouble:model.xmin]];
+    [x_max addObject:[NSNumber numberWithDouble:model.xmax]];
+    [y_min addObject:[NSNumber numberWithDouble:model.ymin]];
+    [y_max addObject:[NSNumber numberWithDouble:model.ymax]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,32 +125,29 @@
                 model.xmax = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymin = model.ymin + (model.ymax - model.ymin)/2;
                 break;
-                
             case 2:
                 model.xmin = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymin = model.ymin + (model.ymax - model.ymin)/2;
                 break;
-            
             case 3:
                 model.xmax = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymax = model.ymin + (model.ymax - model.ymin)/2;
                 break;
-                
             case 4:
                 model.xmin = model.xmin + (model.xmax - model.xmin)/2;
                 model.ymax = model.ymin + (model.ymax - model.ymin)/2;
                 break;
-                
             default:
                 break;
         }
-        
+        [self storeCorners];
         [self drawMandelbrotSet];
     }
 }
 
 - (void) drawMandelbrotSet
 {
+    [self navigationButtonStatus];
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [_activityIndicator startAnimating];
     dispatch_queue_t queue = dispatch_queue_create("com.mishasoftwaresolutions.mandelbrot", NULL);
@@ -143,12 +162,58 @@
     });
 }
 
+- (void)navigationButtonStatus
+{
+    if ([x_min count] > 1) {
+        [backButton setHidden:NO];
+    } else {
+        [backButton setHidden:YES];
+    }
+}
+
 - (IBAction)backToSquareOne:(id)sender {
     model.xmin = -2.0;
     model.xmax = 1.0;
     model.ymin = -1.5;
     model.ymax = 1.5;
+    [x_min removeAllObjects];
+    [x_max removeAllObjects];
+    [y_min removeAllObjects];
+    [y_max removeAllObjects];
+    [self storeCorners];
+    [self drawMandelbrotSet];
+}
 
+- (IBAction)reduceResolution:(id)sender {
+    if (model.nx == 100) return;
+    model.nx = model.nx / 2;
+    model.ny = model.ny / 2;
+    [model initializeItersArraySizeUsing_nx:model.nx and_ny:model.ny];
+    drawSet.nx = model.nx;
+    drawSet.ny = model.ny;
+    [drawSet initData];
+    [self drawMandelbrotSet];
+}
+
+- (IBAction)increaseResolution:(id)sender {
+    if (model.nx == 800) return;
+    model.nx = model.nx * 2;
+    model.ny = model.ny * 2;
+    [model initializeItersArraySizeUsing_nx:model.nx and_ny:model.ny];
+    drawSet.nx = model.nx;
+    drawSet.ny = model.ny;
+    [drawSet initData];
+    [self drawMandelbrotSet];
+}
+- (IBAction)goBack:(id)sender {
+    x_min.removeLastObject;
+    x_max.removeLastObject;
+    y_min.removeLastObject;
+    y_max.removeLastObject;
+    model.xmin = [x_min.lastObject doubleValue];
+    model.xmax = [x_max.lastObject doubleValue];
+    model.ymin = [y_min.lastObject doubleValue];
+    model.ymax = [y_max.lastObject doubleValue];
     [self drawMandelbrotSet];
 }
 

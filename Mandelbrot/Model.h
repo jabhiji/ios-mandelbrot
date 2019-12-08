@@ -13,5 +13,6 @@
 @property int nx, ny;
 @property int MAX_ITER;
 @property NSMutableArray* iters;
+- (void) initializeItersArraySizeUsing_nx: (int) nx and_ny: (int) ny;
 - (void) updateMandelbrotData;
 @end

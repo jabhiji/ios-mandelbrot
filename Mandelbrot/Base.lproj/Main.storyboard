@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,54 +19,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MandelBrotBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wAd-bk-ySX">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-jf-Zpk" customClass="DrawMandelbrot">
-                                <rect key="frame" x="20" y="148" width="728" height="728"/>
+                                <rect key="frame" x="20" y="71" width="728" height="728"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B4f-jf-Zpk" secondAttribute="height" multiplier="1:1" id="z8M-sx-IXe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mandelbrot Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jV-k4-E7c">
-                                <rect key="frame" x="221.5" y="73" width="325" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-lw-oy2">
-                                <rect key="frame" x="335.5" y="901" width="97" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="RESET">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToSquareOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esg-jq-Z90"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GPO-Ia-3DZ">
-                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                                <rect key="frame" x="365.5" y="416.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="u89-CU-fPP">
+                                <rect key="frame" x="20" y="822" width="728" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTp-xs-prf">
+                                        <rect key="frame" x="0.0" y="1" width="50" height="47.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9YG-ZP-Edp"/>
+                                            <constraint firstAttribute="width" constant="50" id="tes-rW-8mE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="chevron.left.square" catalog="system"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81E-kc-t2E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-lw-oy2" userLabel="Reset Button">
+                                        <rect key="frame" x="226" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gea-Zs-i9X"/>
+                                            <constraint firstAttribute="width" constant="50" id="rem-B7-wZK"/>
+                                        </constraints>
+                                        <state key="normal" image="ResetButton">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToSquareOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esg-jq-Z90"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-SX-g38" userLabel="LowResButton">
+                                        <rect key="frame" x="452" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Kwd-Oe-27M"/>
+                                            <constraint firstAttribute="height" constant="50" id="il5-dc-nF2"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="LowResButton">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reduceResolution:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rxc-us-l6r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-KU-agp" userLabel="HighResButton">
+                                        <rect key="frame" x="678" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MF0-0M-LL1"/>
+                                            <constraint firstAttribute="width" constant="50" id="cSZ-8Q-FeB"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="HighResButton">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="increaseResolution:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XhF-bs-9je"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OTP-Od-pNO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GPO-Ia-3DZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1ti-le-Zua"/>
+                            <constraint firstItem="GPO-Ia-3DZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.85" id="1ti-le-Zua"/>
+                            <constraint firstItem="u89-CU-fPP" firstAttribute="top" secondItem="B4f-jf-Zpk" secondAttribute="bottom" constant="23" id="CTR-3X-o1C"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-20" id="GD1-Nb-3Kk"/>
                             <constraint firstItem="GPO-Ia-3DZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KQU-iW-aRk"/>
-                            <constraint firstItem="BrA-lw-oy2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRy-rV-lcX"/>
-                            <constraint firstItem="5jV-k4-E7c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUC-VC-2wU"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8L-bk-lcX"/>
-                            <constraint firstItem="BrA-lw-oy2" firstAttribute="top" secondItem="B4f-jf-Zpk" secondAttribute="bottom" constant="25" id="edv-qh-aab"/>
-                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="top" secondItem="5jV-k4-E7c" secondAttribute="bottom" constant="15" id="hmV-XC-nla"/>
-                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sak-ld-OqS"/>
+                            <constraint firstItem="u89-CU-fPP" firstAttribute="trailing" secondItem="B4f-jf-Zpk" secondAttribute="trailing" id="iSD-gv-FxC"/>
+                            <constraint firstItem="u89-CU-fPP" firstAttribute="leading" secondItem="B4f-jf-Zpk" secondAttribute="leading" id="ill-g1-E51"/>
+                            <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.85" id="sak-ld-OqS"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ya4-5U-bIR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="GPO-Ia-3DZ" id="m6h-rP-Cu7"/>
+                        <outlet property="backButton" destination="nTp-xs-prf" id="YWN-lY-9FU"/>
                         <outlet property="blackBox" destination="B4f-jf-Zpk" id="8Sf-R0-Ao7"/>
                     </connections>
                 </viewController>
@@ -78,6 +117,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MandelBrotBackground" width="381" height="319"/>
+        <image name="HighResButton" width="20" height="20"/>
+        <image name="LowResButton" width="20" height="20"/>
+        <image name="ResetButton" width="81" height="81"/>
+        <image name="chevron.left.square" catalog="system" width="64" height="56"/>
     </resources>
 </document>

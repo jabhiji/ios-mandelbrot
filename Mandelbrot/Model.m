@@ -19,29 +19,38 @@
 {
     self = [super init];
     if (self) {
-        nx = 500;
-        ny = 500;
+        nx = 400;
+        ny = 400;
         xmin = -2.0;
         xmax = 1.0;
         ymin = -1.5;
         ymax = 1.5;
         MAX_ITER = 200;
-        
-        // allocate 2D array
-        iters = [[NSMutableArray alloc] initWithCapacity:nx*ny];
-        
-        // initialize the 2D "iters" array, which
-        // represents the number of iterations it takes for the
-        // point to escape from the set
-        
-        for(int i = 0; i < nx; i++) {
-            for(int j = 0; j < ny; j++) {
-                [iters addObject:@(0)];
-            }
-        }
+        [self initializeItersArraySizeUsing_nx:nx and_ny:ny];
     }
 
     return self;
+}
+
+- (void) initializeItersArraySizeUsing_nx: (int) nx and_ny: (int) ny
+{
+    // allocate 2D array
+    if (iters != nil) {
+        [iters removeAllObjects];
+    }
+    iters = nil;
+
+    iters = [[NSMutableArray alloc] initWithCapacity:nx*ny];
+
+    // initialize the 2D "iters" array, which
+    // represents the number of iterations it takes for the
+    // point to escape from the set
+
+    for(int i = 0; i < nx; i++) {
+        for(int j = 0; j < ny; j++) {
+            [iters addObject:@(0)];
+        }
+    }
 }
 
 // this function checks if a point (x,y) is a member of the Mandelbrot set

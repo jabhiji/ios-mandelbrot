@@ -374,7 +374,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandelbrot/Mandelbrot-Prefix.pch";
 				INFOPLIST_FILE = "Mandelbrot/Mandelbrot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mishasoftwaresolutions.mandelbrot;
 				PRODUCT_NAME = MandelTrot;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -391,7 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandelbrot/Mandelbrot-Prefix.pch";
 				INFOPLIST_FILE = "Mandelbrot/Mandelbrot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mishasoftwaresolutions.mandelbrot;
 				PRODUCT_NAME = MandelTrot;
 				TARGETED_DEVICE_FAMILY = "1,2";

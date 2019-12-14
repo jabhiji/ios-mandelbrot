@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,13 +33,13 @@
                                 <rect key="frame" x="20" y="822" width="728" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTp-xs-prf">
-                                        <rect key="frame" x="0.0" y="1" width="50" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9YG-ZP-Edp"/>
                                             <constraint firstAttribute="width" constant="50" id="tes-rW-8mE"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="chevron.left.square" catalog="system"/>
+                                        <state key="normal" backgroundImage="BackButton"/>
                                         <connections>
                                             <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81E-kc-t2E"/>
                                         </connections>
@@ -117,9 +117,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackButton" width="50" height="50"/>
         <image name="HighResButton" width="20" height="20"/>
         <image name="LowResButton" width="20" height="20"/>
         <image name="ResetButton" width="81" height="81"/>
-        <image name="chevron.left.square" catalog="system" width="64" height="56"/>
     </resources>
 </document>

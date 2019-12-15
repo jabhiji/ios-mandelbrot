@@ -35,8 +35,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTp-xs-prf">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="9YG-ZP-Edp"/>
-                                            <constraint firstAttribute="width" constant="50" id="tes-rW-8mE"/>
+                                            <constraint firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="flj-uc-YnJ"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="BackButton"/>
@@ -45,11 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-lw-oy2" userLabel="Reset Button">
-                                        <rect key="frame" x="226" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="gea-Zs-i9X"/>
-                                            <constraint firstAttribute="width" constant="50" id="rem-B7-wZK"/>
-                                        </constraints>
+                                        <rect key="frame" x="135.5" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="ResetButton">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,37 +53,55 @@
                                             <action selector="backToSquareOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esg-jq-Z90"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-SX-g38" userLabel="LowResButton">
-                                        <rect key="frame" x="452" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Kwd-Oe-27M"/>
-                                            <constraint firstAttribute="height" constant="50" id="il5-dc-nF2"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="LowResButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-SX-g38" userLabel="Button100">
+                                        <rect key="frame" x="271" y="0.0" width="50" height="50"/>
+                                        <state key="normal" backgroundImage="Button100_OFF">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="reduceResolution:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rxc-us-l6r"/>
+                                            <action selector="resolution100:" destination="BYZ-38-t0r" eventType="touchUpInside" id="de1-yU-Bup"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-KU-agp" userLabel="HighResButton">
-                                        <rect key="frame" x="678" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="MF0-0M-LL1"/>
-                                            <constraint firstAttribute="width" constant="50" id="cSZ-8Q-FeB"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="HighResButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mz-GW-hwq" userLabel="Button200">
+                                        <rect key="frame" x="407" y="0.0" width="50" height="50"/>
+                                        <state key="normal" backgroundImage="Button200_ON">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="increaseResolution:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XhF-bs-9je"/>
+                                            <action selector="resolution200:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wE-HM-1ra"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4R-Ji-YxC" userLabel="Button400">
+                                        <rect key="frame" x="542.5" y="0.0" width="50" height="50"/>
+                                        <state key="normal" backgroundImage="Button400_OFF">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resolution400:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qvH-1w-5G8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-KU-agp" userLabel="Button800">
+                                        <rect key="frame" x="678" y="0.0" width="50" height="50"/>
+                                        <state key="normal" backgroundImage="Button800_OFF">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resolution800:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5vM-yW-OmU"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OTP-Od-pNO"/>
+                                    <constraint firstItem="j4R-Ji-YxC" firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="211-FV-9EL"/>
+                                    <constraint firstItem="ooa-KU-agp" firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="40m-S4-i8S"/>
+                                    <constraint firstItem="X5L-SX-g38" firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="6cd-dQ-C7q"/>
+                                    <constraint firstAttribute="bottom" secondItem="nTp-xs-prf" secondAttribute="bottom" id="JIA-Oq-EOZ"/>
+                                    <constraint firstItem="nTp-xs-prf" firstAttribute="top" secondItem="u89-CU-fPP" secondAttribute="top" id="fQi-La-tw9"/>
+                                    <constraint firstItem="BrA-lw-oy2" firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="s7K-U2-K42"/>
+                                    <constraint firstItem="0Mz-GW-hwq" firstAttribute="width" secondItem="nTp-xs-prf" secondAttribute="height" multiplier="1:1" id="xjI-mQ-7yG"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -101,6 +114,7 @@
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8L-bk-lcX"/>
                             <constraint firstItem="u89-CU-fPP" firstAttribute="trailing" secondItem="B4f-jf-Zpk" secondAttribute="trailing" id="iSD-gv-FxC"/>
                             <constraint firstItem="u89-CU-fPP" firstAttribute="leading" secondItem="B4f-jf-Zpk" secondAttribute="leading" id="ill-g1-E51"/>
+                            <constraint firstItem="u89-CU-fPP" firstAttribute="height" secondItem="B4f-jf-Zpk" secondAttribute="height" multiplier="0.0686813" id="iyx-3A-dRl"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.85" id="sak-ld-OqS"/>
                             <constraint firstItem="B4f-jf-Zpk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ya4-5U-bIR"/>
                         </constraints>
@@ -109,6 +123,10 @@
                         <outlet property="activityIndicator" destination="GPO-Ia-3DZ" id="m6h-rP-Cu7"/>
                         <outlet property="backButton" destination="nTp-xs-prf" id="YWN-lY-9FU"/>
                         <outlet property="blackBox" destination="B4f-jf-Zpk" id="8Sf-R0-Ao7"/>
+                        <outlet property="button100" destination="X5L-SX-g38" id="8tz-yE-hyh"/>
+                        <outlet property="button200" destination="0Mz-GW-hwq" id="XW5-Yy-TJd"/>
+                        <outlet property="button400" destination="j4R-Ji-YxC" id="uPJ-SP-7pH"/>
+                        <outlet property="button800" destination="ooa-KU-agp" id="283-FF-Auf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,8 +136,10 @@
     </scenes>
     <resources>
         <image name="BackButton" width="50" height="50"/>
-        <image name="HighResButton" width="20" height="20"/>
-        <image name="LowResButton" width="20" height="20"/>
+        <image name="Button100_OFF" width="26" height="26"/>
+        <image name="Button200_ON" width="26" height="26"/>
+        <image name="Button400_OFF" width="26" height="26"/>
+        <image name="Button800_OFF" width="26" height="26"/>
         <image name="ResetButton" width="81" height="81"/>
     </resources>
 </document>

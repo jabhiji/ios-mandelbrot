@@ -23,6 +23,10 @@
 @property NSMutableArray* y_min;
 @property NSMutableArray* y_max;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *button100;
+@property (weak, nonatomic) IBOutlet UIButton *button200;
+@property (weak, nonatomic) IBOutlet UIButton *button400;
+@property (weak, nonatomic) IBOutlet UIButton *button800;
 
 - (IBAction)backToSquareOne:(id)sender;
 @end
@@ -184,10 +188,47 @@
     [self drawMandelbrotSet];
 }
 
-- (IBAction)reduceResolution:(id)sender {
-    if (model.nx == 100) return;
-    model.nx = model.nx / 2;
-    model.ny = model.ny / 2;
+- (IBAction)resolution100:(id)sender {
+    [_button100 setBackgroundImage:[UIImage imageNamed:@"Button100_ON"] forState: UIControlStateNormal];
+    [_button200 setBackgroundImage:[UIImage imageNamed:@"Button200_OFF"] forState: UIControlStateNormal];
+    [_button400 setBackgroundImage:[UIImage imageNamed:@"Button400_OFF"] forState: UIControlStateNormal];
+    [_button800 setBackgroundImage:[UIImage imageNamed:@"Button800_OFF"] forState: UIControlStateNormal];
+    model.nx = 100;
+    model.ny = 100;
+    [self redraw];
+}
+
+- (IBAction)resolution200:(id)sender {
+    [_button100 setBackgroundImage:[UIImage imageNamed:@"Button100_OFF"] forState: UIControlStateNormal];
+    [_button200 setBackgroundImage:[UIImage imageNamed:@"Button200_ON"] forState: UIControlStateNormal];
+    [_button400 setBackgroundImage:[UIImage imageNamed:@"Button400_OFF"] forState: UIControlStateNormal];
+    [_button800 setBackgroundImage:[UIImage imageNamed:@"Button800_OFF"] forState: UIControlStateNormal];
+    model.nx = 200;
+    model.ny = 200;
+    [self redraw];
+}
+
+- (IBAction)resolution400:(id)sender {
+    [_button100 setBackgroundImage:[UIImage imageNamed:@"Button100_OFF"] forState: UIControlStateNormal];
+    [_button200 setBackgroundImage:[UIImage imageNamed:@"Button200_OFF"] forState: UIControlStateNormal];
+    [_button400 setBackgroundImage:[UIImage imageNamed:@"Button400_ON"] forState: UIControlStateNormal];
+    [_button800 setBackgroundImage:[UIImage imageNamed:@"Button800_OFF"] forState: UIControlStateNormal];
+    model.nx = 400;
+    model.ny = 400;
+    [self redraw];
+}
+
+- (IBAction)resolution800:(id)sender {
+    [_button100 setBackgroundImage:[UIImage imageNamed:@"Button100_OFF"] forState: UIControlStateNormal];
+    [_button200 setBackgroundImage:[UIImage imageNamed:@"Button200_OFF"] forState: UIControlStateNormal];
+    [_button400 setBackgroundImage:[UIImage imageNamed:@"Button400_OFF"] forState: UIControlStateNormal];
+    [_button800 setBackgroundImage:[UIImage imageNamed:@"Button800_ON"] forState: UIControlStateNormal];
+    model.nx = 800;
+    model.ny = 800;
+    [self redraw];
+}
+
+- (void) redraw {
     [model initializeItersArraySizeUsing_nx:model.nx and_ny:model.ny];
     drawSet.nx = model.nx;
     drawSet.ny = model.ny;
@@ -195,16 +236,6 @@
     [self drawMandelbrotSet];
 }
 
-- (IBAction)increaseResolution:(id)sender {
-    if (model.nx == 800) return;
-    model.nx = model.nx * 2;
-    model.ny = model.ny * 2;
-    [model initializeItersArraySizeUsing_nx:model.nx and_ny:model.ny];
-    drawSet.nx = model.nx;
-    drawSet.ny = model.ny;
-    [drawSet initData];
-    [self drawMandelbrotSet];
-}
 - (IBAction)goBack:(id)sender {
     x_min.removeLastObject;
     x_max.removeLastObject;
